@@ -10,7 +10,7 @@ html = scraperwiki.scrape("http://mastercardmemorialcup.ca/roster/6/62")
 # Find something on the page using css selectors
 root = lxml.html.fromstring(html)
 player_name_element = root.cssselect("a.table__link")
-player_name_text = player_name_element[0].text_content()
+player_name_text = player_name_element.text_content()
 print(player_name_text)
 
 # Write out to the sqlite database using scraperwiki library
